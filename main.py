@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from groq import Groq
+#import pyttsx3
 
 app = Flask(__name__)
 
@@ -32,6 +33,7 @@ def get_curriculum():
     days = data.get("days")
 
     if not topic or not days:
+        #print("something except the input type")
         return jsonify({"error": "Please provide both a topic and number of days"}), 400
 
     curriculum = get_groq_response(topic, days)
@@ -39,6 +41,7 @@ def get_curriculum():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    #app.run(debug=True)
 
 
 
