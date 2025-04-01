@@ -1,11 +1,11 @@
 import os
 from flask import Flask, render_template, request, jsonify
 from groq import Groq
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+#client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 app = Flask(__name__)
 
 # Initialize Groq API client
-client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
+client = Groq(api_key=os.environ.get("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"))
 
 def get_groq_response(topic, days):
     """Fetches curriculum from Groq API based on user input."""
